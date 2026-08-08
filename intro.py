@@ -32,3 +32,22 @@ output_tokens = max_completion_tokens
 cost = (input_tokens * input_token_price + output_tokens * output_token_price)
 print(f"Estimated cost: ${cost}")
 
+#Experimenting with Temperature 
+client = OpenAI(api_key="<OPENAI_API_TOKEN>")
+
+# Create a detailed prompt
+prompt = """
+Create a detailed product description for SonicPro headphones, it has active noise cancellation, 40 hour battery and with a beautiful foldable design 
+"""
+
+response = client.chat.completions.create(
+    model="gpt-4o-mini",
+    messages=[{"role": "user", "content": prompt}],
+    # Experiment with max_completion_tokens and temperature settings
+    max_completion_tokens=400,
+    temperature=1
+)
+
+print(response.choices[0].message.content)
+
+
