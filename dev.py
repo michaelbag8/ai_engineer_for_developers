@@ -36,3 +36,16 @@ print(indexed_names_comp)
 # Unpack an enumerate object with a starting index of one
 indexed_names_unpack = [*enumerate(names, 1)]
 print(indexed_names_unpack)
+# Print second row of nums
+print(nums[0, 2])
+
+# Print all elements of nums that are greater than six
+print(nums[nums > 6])
+
+# Double every element of nums
+nums_dbl = nums * 2
+print(nums_dbl)
+
+# Replace the third column of nums
+nums[0,2] = nums[0,2] + 1
+print(nums)
